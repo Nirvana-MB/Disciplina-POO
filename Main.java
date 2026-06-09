@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    //
+    // limite da quantidade de dados e funcionarios
     Funcionario[] listaFuncionarios = new Funcionario[10];
-    //
+    // quantidade de funcionarios no sistema
     int contadorFuncionarios = 0;
 
     int opcao;
@@ -24,7 +24,7 @@ public class Main {
 
       switch (opcao) {
         case 1:
-          // 
+          // cadastro dos funcionarios
           if (contadorFuncionarios < listaFuncionarios.length) {
               System.out.print("Digite o nome: ");
               String nome = scanner.nextLine();
@@ -36,7 +36,7 @@ public class Main {
               int matricula = scanner.nextInt();
               scanner.nextLine(); // Limpa o buffer
 
-              // 
+              // armazena os dados e cadastra os funcionarios
               listaFuncionarios[contadorFuncionarios] = new Funcionario(nome, cargo, salario, matricula);
               contadorFuncionarios++; // incrementa o total de cadastrados ( +1 no total pro limite )
               System.out.println("Funcionário cadastrado com sucesso");
@@ -46,7 +46,7 @@ public class Main {
           break;
 
         case 2:
-          //
+         // exibe os dados e os funcionarios cadastrados
           if (contadorFuncionarios == 0) {
               System.out.println("Nenhum funcionário cadastrado");
           } else {
@@ -58,7 +58,7 @@ public class Main {
           break;
 
         case 3:
-          //
+          // solicita a matricula e busca os funcionarios cadastrados
           System.out.print("Digite a matrícula para buscar: ");
           int buscarMatricula = scanner.nextInt();
           scanner.nextLine();
@@ -79,7 +79,7 @@ public class Main {
           break;
 
         case 4:
-          //
+          // pede a matricula e busca o funcionário para aplicar o aumento
           System.out.print("Digite a matrícula do funcionário: ");
           int matAumento = scanner.nextInt();
           
@@ -104,7 +104,7 @@ public class Main {
           break;
 
         case 5:
-          //
+          // exibe a folha salarial dos funcionarios cadastrados
           if (contadorFuncionarios == 0) {
               System.out.println("Folha salarial vazia. Sem funcionários no sistema");
           } else {
@@ -119,7 +119,7 @@ public class Main {
           break;
 
         case 6:
-          //
+          // fecha o sistema de cadastro dos funcionarios
           System.out.println("Desligando sistema de consulta de funcionários..");
           break;
           
